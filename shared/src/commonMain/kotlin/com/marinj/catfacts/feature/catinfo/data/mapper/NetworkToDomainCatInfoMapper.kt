@@ -5,11 +5,9 @@ import com.marinj.catfacts.feature.catinfo.domain.model.CatInfo
 
 class NetworkToDomainCatInfoMapper {
 
-    suspend fun map(origin: NetworkCatInfo): CatInfo {
+    fun map(origin: NetworkCatInfo): CatInfo {
         return with(origin) {
-            CatInfo(
-                information,
-            )
+            CatInfo(fact)
         }
     }
 }

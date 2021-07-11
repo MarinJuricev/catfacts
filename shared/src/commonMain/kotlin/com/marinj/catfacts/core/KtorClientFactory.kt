@@ -2,6 +2,6 @@ package com.marinj.catfacts.core
 
 import io.ktor.client.*
 
-expect class KtorClientFactory {
+expect class KtorClientFactory() {
     fun build(): HttpClient
 }

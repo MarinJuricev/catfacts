@@ -3,12 +3,14 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
+    id("kotlinx-serialization")
     id("com.android.library")
 }
 
 version = "1.0"
 
 val ktorVersion = "1.5.2"
+val koinVersion = "3.1.2"
 
 kotlin {
     android()
@@ -34,6 +36,9 @@ kotlin {
             dependencies {
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
+                implementation("io.ktor:ktor-client-json:$ktorVersion")
+
+                api("io.insert-koin:koin-core:$koinVersion")
             }
         }
         val commonTest by getting {
@@ -64,10 +69,10 @@ kotlin {
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdk = 30
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(23)
-        targetSdkVersion(30)
+        minSdk = 23
+        targetSdk = 30
     }
 }

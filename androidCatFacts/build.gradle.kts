@@ -4,43 +4,41 @@ plugins {
 }
 
 dependencies {
-    val build_gradle_version = "7.1.0-alpha02"
-    val kotlin_gradle_plugin_version = "1.5.10"
-    val appcompat_version = "1.3.0"
-    val hilt_version = "2.37"
-    val hilt_navigation_compose_version = "1.0.0-alpha03"
-    val compose_activity_version = "1.3.0-beta02"
-    val compose_version = "1.0.0-beta09"
-    val compose_navigation_version = "2.4.0-alpha03"
-    val material_version = "1.3.0"
-    val room_version = "2.4.0-alpha03"
-    val mockk_version = "1.11.0"
-    val coroutines_test_version = "1.5.0"
-    val truth_version = "1.1.3"
-    val junit_version = "4.13.2"
-    val kotlinter_version = "3.4.5"
-
+    val appcompatVersion = "1.3.0"
+    val composeActivityVersion = "1.3.0-beta02"
+    val composeVersion = "1.0.0-beta09"
+    val composeNavigationVersion = "2.4.0-alpha03"
+    val materialVersion = "1.3.0"
+    val mockkVersion = "1.11.0"
+    val coroutinesTestVersion = "1.5.0"
+    val truthVersion = "1.1.3"
+    val junitVersion = "4.13.2"
+    val koinVersion = "3.1.2"
 
     implementation(project(":shared"))
 
-    implementation("androidx.appcompat:appcompat:$appcompat_version")
-    implementation("androidx.activity:activity-compose:$compose_activity_version")
+    implementation("androidx.appcompat:appcompat:$appcompatVersion")
+    implementation("androidx.activity:activity-compose:$composeActivityVersion")
 
-    implementation("com.google.android.material:material:$material_version")
+    implementation("com.google.android.material:material:$materialVersion")
 
-    implementation("androidx.compose.ui:ui:$compose_version")
-    implementation("androidx.compose.material:material:$compose_version")
-    implementation("androidx.compose.ui:ui-tooling:$compose_version")
-    implementation("androidx.compose.runtime:runtime:$compose_version")
-    implementation("androidx.compose.animation:animation:$compose_version")
-    implementation("androidx.compose.foundation:foundation:$compose_version")
-    implementation("androidx.compose.compiler:compiler:$compose_version")
-    implementation("androidx.navigation:navigation-compose:$compose_navigation_version")
+    implementation("androidx.compose.ui:ui:$composeVersion")
+    implementation("androidx.compose.material:material:$composeVersion")
+    implementation("androidx.compose.ui:ui-tooling:$composeVersion")
+    implementation("androidx.compose.runtime:runtime:$composeVersion")
+    implementation("androidx.compose.animation:animation:$composeVersion")
+    implementation("androidx.compose.foundation:foundation:$composeVersion")
+    implementation("androidx.compose.compiler:compiler:$composeVersion")
+    implementation("androidx.navigation:navigation-compose:$composeNavigationVersion")
 
-    testImplementation("junit:junit:$junit_version")
-    testImplementation("io.mockk:mockk:$mockk_version")
-    testImplementation("com.google.truth:truth:$truth_version")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_test_version")
+    implementation("io.insert-koin:koin-core:$koinVersion")
+    implementation("io.insert-koin:koin-android:$koinVersion")
+    implementation("io.insert-koin:koin-androidx-compose:$koinVersion")
+
+    testImplementation("junit:junit:$junitVersion")
+    testImplementation("io.mockk:mockk:$mockkVersion")
+    testImplementation("com.google.truth:truth:$truthVersion")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTestVersion")
 }
 
 android {
