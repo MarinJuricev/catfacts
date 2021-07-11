@@ -11,6 +11,7 @@ version = "1.0"
 
 val ktorVersion = "1.5.2"
 val koinVersion = "3.1.2"
+val mockkVersion = "1.12.0"
 
 kotlin {
     android()
@@ -45,6 +46,8 @@ kotlin {
             dependencies {
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
+
+                implementation("io.mockk:mockk-common:$mockkVersion")
             }
         }
         val androidMain by getting {
