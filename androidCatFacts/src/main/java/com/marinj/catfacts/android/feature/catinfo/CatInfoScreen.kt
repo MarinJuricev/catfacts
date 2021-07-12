@@ -21,6 +21,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.marinj.catfacts.android.R
 import com.marinj.catfacts.android.feature.catinfo.viewmodel.CatInfoViewModel
+import com.marinj.catfacts.feature.catinfo.domain.model.CatInfoEvent
 import org.koin.androidx.compose.getViewModel
 
 @Composable

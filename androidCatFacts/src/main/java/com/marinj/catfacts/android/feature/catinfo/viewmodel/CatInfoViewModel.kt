@@ -2,8 +2,8 @@ package com.marinj.catfacts.android.feature.catinfo.viewmodel
 
 import androidx.lifecycle.viewModelScope
 import com.marinj.catfacts.android.core.base.BaseViewModel
-import com.marinj.catfacts.android.feature.catinfo.CatInfoEvent
-import com.marinj.catfacts.android.feature.catinfo.model.CatInfoViewState
+import com.marinj.catfacts.feature.catinfo.domain.model.CatInfoEvent
+import com.marinj.catfacts.feature.catinfo.domain.model.CatInfoViewState
 import com.marinj.catfacts.core.Either
 import com.marinj.catfacts.core.mapper.FailureToErrorMessageMapper
 import com.marinj.catfacts.feature.catinfo.domain.usecase.GetRandomCatInfo
@@ -30,7 +30,7 @@ class CatInfoViewModel(
         _catInfoViewState.emit(_catInfoViewState.value.copy(isLoading = true))
         delay(200)
 
-        when (val result = getRandomCatInfo()) {
+        when (val result = getRandomCatInfo.execute()) {
             is Either.Right -> _catInfoViewState.emit(
                 catInfoViewState.value.copy(
                     catInfo = result.value.information,

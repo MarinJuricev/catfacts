@@ -1,0 +1,6 @@
+framework module Pods_iOSCatFacts {
+  umbrella header "Pods-iOSCatFacts-umbrella.h"
+
+  export *
+  module * { export * }
+}

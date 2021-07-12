@@ -9,6 +9,6 @@ class GetRandomCatInfo(
     private val catInfoRepository: CatInfoRepository
 ) {
 
-    suspend operator fun invoke(): Either<Failure, CatInfo> =
+    suspend fun execute(): Either<Failure, CatInfo> =
         catInfoRepository.getRandomCatInfo()
 }
